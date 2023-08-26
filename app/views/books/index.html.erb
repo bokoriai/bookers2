@@ -1,33 +1,28 @@
+<%= render 'left', books: @books %>
 
-
-<div class="container px-5 px-sm-0">
-    <div class="row">
-        <div class="col-md-4">
-    
-            <p><h1>User info</h1></p>
-            
-            <p>name</p>
-            <p>introduction</p>
-            
-            <p><h1>New book</h1></p>
-            <%= form_with model: @book do |f| %>
-                <p>Title</p>
-                <%= f.text_field :title %>
-                
-                <p>Opinion</p>
-                <%= f.text_area :body %><br />
-                
-                <%= f.submit 'Create Book' %>
-            
-            <% end %>
-        </div>
-        
         <div class="col-md-8">
-            <h1>Books</h1>
+            <p><h1>Books</h1></p>
 
-            <table class="table table-stripe">
-                
+            <table class="table">
+                <tbody>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Opinion</th>
+                    </tr>
+                    </thead>
+                    
+                    <% @books.each do |book| %>
+                    <tr>
+                        <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+                        <td><%= book.title %></td>
+                        <td><%= book.body %></td>
+                    </tr>
+                    <% end %>
+                    
+                </tbody>
             </table>
-    </div>
+        </div>
     </div>
 </div>

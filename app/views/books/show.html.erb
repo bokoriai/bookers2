@@ -1,2 +1,28 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'left', books: @books %>
+        
+        <div class="col-md-8">
+            <p><h1>Book detail</h1></p>
+
+            <table class="table">
+                <tbody>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Opinion</th>
+                    </tr>
+                    </thead>
+                    
+                   
+                    <tr>
+                        <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
+                        <td><%= @book.title %></td>
+                        <td><%= @book.body %></td>
+                    </tr>
+                
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
