@@ -1,6 +1,6 @@
 <div class="container px-5 px-sm-0">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
            
             <p><h1>User info</h1></p>
             
@@ -19,13 +19,13 @@
             </table>
             
             <%= link_to edit_user_path(user), class:'btn btn-light btn-outline-secondary btn-block' do %>
-                <i class="fa-solid fa-user-pen"></i>
+                <i class="fa-solid fa-user-cog"></i>
             <% end %>
     
             <p><h1>New book</h1></p>
             <%= form_with model: book do |f| %>
                 <p>Title</p>
-                <%= f.text_field :title%>
+                <%= f.text_field :title %>
                 
                 <p>Opinion</p>
                 <%= f.text_area :body %>
