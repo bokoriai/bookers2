@@ -7,25 +7,25 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <p><%= image_tag @user.get_profile_image(100,100) %></p>
+                        <p><%= image_tag user.get_profile_image(100,100) %></p>
                         <th>name</th>
-                        <th><%= @user.name %></th>
+                        <th><%= user.name %></th>
                     </tr>
                     <tr>
                         <th>introduction</th>
-                        <th><%= @user.introduction %></th>
+                        <th><%= user.introduction %></th>
                     </tr>
                 </tbody>
             </table>
             
-            <%= link_to edit_user_path(@user), class:'btn btn-light btn-outline-secondary btn-block' do %>
+            <%= link_to edit_user_path(user), class:'btn btn-light btn-outline-secondary btn-block' do %>
                 <i class="fa-solid fa-user-pen"></i>
             <% end %>
     
             <p><h1>New book</h1></p>
-            <%= form_with model: @book do |f| %>
+            <%= form_with model: book do |f| %>
                 <p>Title</p>
-                <%= f.text_field :title %>
+                <%= f.text_field :title%>
                 
                 <p>Opinion</p>
                 <%= f.text_area :body %>

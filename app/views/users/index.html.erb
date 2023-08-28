@@ -1,4 +1,4 @@
-<%= render 'books/left', books: @books %>
+<%= render 'books/left', book: @book, user: @user%>
 
         <div class="col-md-8">
             <p><h1>Users</h1></p>
@@ -17,7 +17,7 @@
                     <tr>
                         <td><%= image_tag user.get_profile_image(100,100) %></td>
                         <td><%= user.name %></td>
-                        <td></td>
+                        <td><%= link_to 'Show', user_path(user.id) %></td>
                     </tr>
                     <% end %>
                     
