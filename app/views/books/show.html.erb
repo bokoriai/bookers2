@@ -1,4 +1,4 @@
-<%= render 'left', book: @booknew, user:@user %>
+<%= render 'left', book: @booknew, user: @user %>
         
         <div class="col-md-8 offset-md-1">
             <p><h1>Book detail</h1></p>
@@ -26,7 +26,7 @@
                         </td>
                         <td>
                             <% if @book.user == current_user %>
-                                <%= link_to "Destroy", book_path(@book.id), method: :delete, class: 'btn btn-danger' %>
+                                <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class: 'btn btn-danger' %>
                             <% end %>
                         </td>
                     </tr>
